@@ -64,147 +64,265 @@ body, html {
   </p>
 </div>  
 
-
+<style>
+    .conversions {
+        background-image: linear-gradient(black, gray);
+    }
+</style>
 
 
 <div class="conversions" id="conversions">
-<h1 style="color:white">Conversion - Celsius and Fahrenheit</h1>
+  <h1 style="color:white">Conversion - Celsius and Fahrenheit</h1>
 
-<p style="color:white">
-<label for="n1">Celcius</label>
-<input id="n1" name="n1" type="number">
+  <p style="color:white">
+    <label for="n1">Celcius</label>
+    <input id="n1" name="n1" type="number">
 
-<button onclick="convertCtoF()"> Convert </button>
-</p>
+    <button onclick="convertCtoF()"> Convert </button>
+  </p>
 
-<p style="color:white">
-<label for="Fahrenheit" id="FahrenheitLabel">Fahrenheit:</label>  
-<input id="convertedF" name="converted" type="number" readonly></input>
-</p>
+  <p style="color:white">
+    <label for="Fahrenheit" id="FahrenheitLabel">Fahrenheit:</label>  
+    <input id="convertedF" name="converted" type="number" readonly></input>
+  </p>
 
-<p style="color:white">
-<label for="n2">Fahrenheit</label>
-<input id="n2" name="n2" type="number">
+  <p style="color:white">
+    <label for="n2">Fahrenheit</label>
+    <input id="n2" name="n2" type="number">
 
-<button onclick="convertFtoC()"> Convert </button>
-</p>
+    <button onclick="convertFtoC()"> Convert </button>
+  </p>
 
-<p style="color:white">
-<label for="Celcius" id="CelciusLabel">Celcius:</label>  
-<input id="convertedC" name="convertedC" type="number" readonly></input>
-</p>
+  <p style="color:white">
+    <label for="Celcius" id="CelciusLabel">Celcius:</label>  
+    <input id="convertedC" name="convertedC" type="number" readonly></input>
+  </p>
 
-<h1 style="color:white">Conversion - Meters and Feet</h1>
+  <h1 style="color:white">Conversion - Meters and Feet</h1>
 
-<p style="color:white">
-<label for="n3">Meters</label>
-<input id="n3" name="n3" type="number">
-<button onclick="convertMetersToFeet()"> Convert </button>
-</p>
+  <p style="color:white">
+    <label for="n3">Meters</label>
+    <input id="n3" name="n3" type="number">
+    <button onclick="convertMetersToFeet()"> Convert </button>
+  </p>
 
-<p style="color:white">
-<label for="Feet" id="FeetLabel">Feet:</label>  
-<input id="convertedFeet" name="converted" type="number" readonly></input>
-</p>
+  <p style="color:white">
+    <label for="Feet" id="FeetLabel">Feet:</label>  
+    <input id="convertedFeet" name="converted" type="number" readonly></input>
+  </p>
 
-<p style="color:white">
-<label for="n4">Feet</label>
-<input id="n4" name="n4" type="number">
-<button onclick="convertFeetToMeters()"> Convert </button>
-</p>
+  <p style="color:white">
+    <label for="n4">Feet</label>
+    <input id="n4" name="n4" type="number">
+    <button onclick="convertFeetToMeters()"> Convert </button>
+  </p>
 
-<p style="color:white">
-<label for="Meters" id="MetersLabel">Meters:</label>  
-<input id="convertedMeters" name="converted" type="number" readonly></input>
-</p>
+  <p style="color:white">
+    <label for="Meters" id="MetersLabel">Meters:</label>  
+    <input id="convertedMeters" name="converted" type="number" readonly></input>
+  </p>
 
+
+</div>
+
+<style>
+    .bg2 {
+        background-image: linear-gradient(gray, black);
+    }
+    #bg2{
+    margin-top: -22px;
+    }
+</style>
+
+<div class="bg2" id="bg2">
+  <div class="incometax" id="tax">
+
+    <h1 style="color:white">Income Tax Calculator</h1>
+
+    <p style="color:white">
+      <label for="taxable">Taxable Income </label>
+      <input id="taxable" name="taxable" type="number">
+      <button onclick="incomeTax()"> Convert </button>
+
+      <label for="finalTax" id="finalTaxLabel"> Income Tax: </label>  
+      <input id="incomeTax" name="incomeTax" type="number" readonly></input>
+    </p>
+
+  </div>
+
+
+  <div class="reploops" id="reploops">
+
+    <h1 style="color:white">The nth factorial</h1>
+
+    <p style="color:white">
+      <label for="inN">Input a value for n: </label>
+      <input id="inN" name="inN" type="number">
+      <button onclick="factorial()"> Compute </button>
+    </p>
+
+    <h3 style="color:white" id="ntitle">  </h3>
+    <p style="color:white" id="nnumbers"></p>
+
+    <h1 style="color:white">The sum of the first N numbers and average</h1>
+
+    <p style="color:white">
+      <label for="sumN">Input a value for n: </label>
+      <input id="sumN" name="sumN" type="number">
+      <button onclick="sumofN()"> Compute </button>
+    </p>
+
+    <h3 style="color:white" id="ntitle2">  </h3>
+    <p style="color:white" id="nnumbers2"></p>
+
+    <h1 style="color:white">The Average of the first n numbers</h1>
+
+    <p style="color:white">
+      <label for="aveN">Input a value for n: </label>
+      <input id="aveN" name="aveN" type="number">
+      <button onclick="averageofN()"> Compute </button>
+    </p>
+
+    <h3 style="color:white" id="ntitle3">  </h3>
+    <p style="color:white" id="nnumbers3"></p>
+
+
+  </div>
 
 </div>
 
 
-<div class="incometax" id="tax">
-
-<h1 style="color:white">Income Tax Calculator</h1>
-
-<p style="color:white">
-<label for="taxable">Taxable Income </label>
-<input id="taxable" name="taxable" type="number">
-<button onclick="incomeTax()"> Convert </button>
-
-<label for="finalTax" id="finalTaxLabel"> Income Tax: </label>  
-<input id="incomeTax" name="incomeTax" type="number" readonly></input>
-</p>
 
 
 
 
 
-</div>
 
 
 <script>
-function convertCtoF(){ // conversion to celcius and fahrenheit
-var x;
+  function convertCtoF(){ // conversion to celcius and fahrenheit
+  var x;
 
-x = document.getElementById("n1").value*1;
+  x = document.getElementById("n1").value*1;
 
-let z = (x * 9.0) / 5.0 + 32;
+  let z = (x * 9.0) / 5.0 + 32;
 
-document.getElementById("convertedF").value=z;
-}
+  document.getElementById("convertedF").value=z;
+  }
+  // -------------------------------------------------------------
+  function convertFtoC(){ // conversion to fahrenheit to celcius
+  var x;
 
-function convertFtoC(){ // conversion to fahrenheit to celcius
-var x;
+  x = document.getElementById("n2").value*1;
 
-x = document.getElementById("n2").value*1;
+  let z = (x - 32.0) * 5.0 / 9.0;
 
-let z = (x - 32.0) * 5.0 / 9.0;
+  document.getElementById("convertedC").value=z;
+  }
+  // -------------------------------------------------------------
+  function convertMetersToFeet(){ // conversion meters to feet
+  var x;
 
-document.getElementById("convertedC").value=z;
-}
+  x = document.getElementById("n3").value*1;
 
-function convertMetersToFeet(){ // conversion meters to feet
-var x;
+  let z = x * 3.28084;
 
-x = document.getElementById("n3").value*1;
+  document.getElementById("convertedFeet").value=z;
+  }
+  // -------------------------------------------------------------
+  function convertFeetToMeters(){ // conversion feet to meters
 
-let z = x * 3.28084;
+  x = document.getElementById("n4").value*1;
 
-document.getElementById("convertedFeet").value=z;
-}
+  let z = x / 3.28084;
 
-function convertFeetToMeters(){ // conversion feet to meters
+  document.getElementById("convertedMeters").value=z;
+  }
 
-x = document.getElementById("n4").value*1;
+  // -------------------------------------------------------------
+  function incomeTax(){
+  var x, tax;
+  x  = document.getElementById("taxable").value*1;
 
-let z = x / 3.28084;
-
-document.getElementById("convertedMeters").value=z;
-}
-
-
-function incomeTax(){
-var x, tax;
-x  = document.getElementById("taxable").value*1;
-
-if(x <= 250000){
-tax = x;
-}else if (x > 250000 && x <= 400000){
-tax = (x-250000)*0.20;
-}else if(x > 400000 && x <= 800000){
-tax = (x-400000)*0.25+30000;
-}else if (x > 800000 && x <= 2000000){
-tax = (x-800000)*0.30+130000;
-}else if (x > 2000000 && x <= 8000000){
-tax = (x-2000000)*0.32+490000;
-}else{
-tax = (x - 8000000)*0.35+2410000;
-}
+  if(x <= 250000){
+  tax = x;
+  }else if (x > 250000 && x <= 400000){
+  tax = (x-250000)*0.20;
+  }else if(x > 400000 && x <= 800000){
+  tax = (x-400000)*0.25+30000;
+  }else if (x > 800000 && x <= 2000000){
+  tax = (x-800000)*0.30+130000;
+  }else if (x > 2000000 && x <= 8000000){
+  tax = (x-2000000)*0.32+490000;
+  }else{
+  tax = (x - 8000000)*0.35+2410000;
+  }
 
 
 
-document.getElementById("incomeTax").value=tax;
-}
+  document.getElementById("incomeTax").value=tax;
+  }
+  // -------------------------------------------------------------
+  function factorial(){
+  var i = 1; 
+  var result = 1;
+  var limit
+
+  limit = document.getElementById("inN").value*1;
+
+  while (i <= limit){
+  result = result*i;
+  i++;
+  }
+
+  document.getElementById("ntitle").innerHTML=
+        "The factorial of " +limit+ " is:";
+
+  document.getElementById("nnumbers").innerHTML=
+        result;
+  }
+  // -------------------------------------------------------------
+  function sumofN(){
+  var i = 1; 
+  var result = 0;
+  var limit;
+
+  limit = document.getElementById("sumN").value*1;
+
+  do{
+  result = result+i;
+  i++;
+  }while (i <= limit);
+
+
+
+  document.getElementById("ntitle2").innerHTML=
+        "The sum of the first " +limit+ " is:";
+
+  document.getElementById("nnumbers2").innerHTML=
+        result;
+  }
+  // -------------------------------------------------------------
+  function averageofN(){
+  var i;
+  var result = 0;
+  var limit, count = 0;
+
+  limit = document.getElementById("aveN").value*1;
+
+  for (i = 1; i <= limit; i++){
+  result = result + i;
+  count++;
+  }
+  let average = result/count;
+
+  document.getElementById("ntitle3").innerHTML=
+        "The average of the first " +limit+ " is:";
+
+  document.getElementById("nnumbers3").innerHTML=
+        average;
+  }
+
 
 
 
