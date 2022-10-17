@@ -11,7 +11,7 @@ body, html {
 }
 
 .hero-image {
-    background-image: linear-gradient(white, black);
+    background-image: linear-gradient(blue, black);
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,11 +42,11 @@ body, html {
 
 <style>
     .about-section {
-        background-color: #000000;
+      background-image: linear-gradient(to left, black, blue);
     }
     #section{
     margin-top: -24px;
-    margin-left: 30px;
+    
     }
 </style>
 
@@ -62,16 +62,19 @@ body, html {
 
   <p style="color:white">Here are some of my programs.
   </p>
+  <br>
 </div>  
 
 <style>
-    .conversions {
-        background-image: linear-gradient(black, gray);
+    .conversions1 {
+        background-image: linear-gradient(to right, black, blue);
+    }#conversions1{
+    margin-top: -22px;
     }
 </style>
 
 
-<div class="conversions" id="conversions">
+<div class="conversions1" id="conversions1">
   <h1 style="color:white">Conversion - Celsius and Fahrenheit</h1>
 
   <p style="color:white">
@@ -97,7 +100,17 @@ body, html {
     <label for="Celcius" id="CelciusLabel">Celcius:</label>  
     <input id="convertedC" name="convertedC" type="number" readonly></input>
   </p>
+  <br>
+</div>
 
+<style>
+    .conversions2 {
+        background-image: linear-gradient(to left, black, blue);
+    }#conversions2{
+  margin-top: -22px;
+    }
+</style>
+<div class="conversions2" id="conversions2">
   <h1 style="color:white">Conversion - Meters and Feet</h1>
 
   <p style="color:white">
@@ -121,13 +134,13 @@ body, html {
     <label for="Meters" id="MetersLabel">Meters:</label>  
     <input id="convertedMeters" name="converted" type="number" readonly></input>
   </p>
-
-
+<br>
 </div>
+
 
 <style>
     .bg2 {
-        background-image: linear-gradient(gray, black);
+        background-image: linear-gradient(to right, black,blue );
     }
     #bg2{
     margin-top: -22px;
@@ -147,6 +160,7 @@ body, html {
       <label for="finalTax" id="finalTaxLabel"> Income Tax: </label>  
       <input id="incomeTax" name="incomeTax" type="number" readonly></input>
     </p>
+    
 
   </div>
 
@@ -163,8 +177,21 @@ body, html {
 
     <h3 style="color:white" id="ntitle">  </h3>
     <p style="color:white" id="nnumbers"></p>
+    <br>
+</div>
 
-    <h1 style="color:white">The sum of the first N numbers </h1>
+<style>
+    .bg3 {
+        background-image: linear-gradient(to left, black,blue );
+    }
+    #bg3{
+    margin-top: -15px;
+    
+    }
+</style>
+
+<div class="bg3" id="bg3">
+    <h1 style="color:white">The sum of the first N numbers</h1>
 
     <p style="color:white">
       <label for="sumN">Input a value for n: </label>
@@ -186,10 +213,12 @@ body, html {
     <h3 style="color:white" id="ntitle3">  </h3>
     <p style="color:white" id="nnumbers3"></p>
 
-
-  </div>
+<br>
 
 </div>
+
+
+
 
 
 
