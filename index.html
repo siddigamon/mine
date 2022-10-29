@@ -217,7 +217,69 @@ body, html {
 
 </div>
 
+<style>
+    .addInformation {
+        background-image: linear-gradient(to right, black,blue );
+    }
+    #addInformation{
+    margin-top: -15px;
+    
+    }
+</style>
 
+<div class="addInformation" id="addInformation">
+  <h1 style="color:white">Simple Payroll</h1>
+
+  <p style="color:white">
+    <label>Name of Employee: </label><br>
+    <input id="nameEmployee" type="text" placeholder="Enter name"></input><br><br>
+                
+    <label>Days Worked: </label><br>
+    <input id="daysWorked" type="number" placeholder="Enter number"></input><br><br>
+                    
+    <label>Daily Rate: </label><br>
+    <input id="dailyRate" type="number" placeholder="Enter number"></input><br><br>
+
+    <label>Deduction Amount: </label><br>
+    <input id="deductionAmount" type="number" placeholder="Enter number"></input><br><br>
+    <button onclick="addInfo()"> Add information </button>
+
+    
+  </p>
+
+  <br>
+
+<p style="color:white">
+  <label>Delete Information #: </label>
+  <input id="deleteInfo" type="number" placeholder="Enter number"></input>
+  <button input type="button" id="remove" class="w3-button w3-theme-d1" onclick="deleteNumber()">Delete</button>
+</p>
+
+  <p>
+    <table border="1" id="personalTable">
+                
+      <thead id="tableHeader">
+          <tr>
+              <th style="color:white; font-size:15pt;">No. </th>
+              <th style="color:white; font-size:15pt;">Employee Name </th>
+              <th style="color:white; font-size:15pt;">Days Worked </th>
+              <th style="color:white; font-size:15pt;">Daily Rate </th>
+              <th style="color:white; font-size:15pt;">Gross Pay </th>
+              <th style="color:white; font-size:15pt;">Deduction Amount </th>
+              <th style="color:white; font-size:15pt;">Net Pay </th>
+            </tr>
+          </thead>
+
+          <tbody style="color:white" id="details">
+
+
+          </tbody>
+        </table>
+  
+  </p>
+  <br>
+  
+</div>
 
 
 
@@ -351,10 +413,56 @@ body, html {
   document.getElementById("nnumbers3").innerHTML=
         average;
   }
+  // -------------------------------------------------------------
 
+ function addInfo(){
+  
+    var nE = document.getElementById("nameEmployee").value;
+    var dW = document.getElementById("daysWorked").value;
+    var dR = document.getElementById("dailyRate").value;
+    var dA = document.getElementById("deductionAmount").value;
+    let grossPay = dW * dR;
+    let netPay = grossPay - dA;
 
+    var detailsTable = document.getElementById("details");
+    var rowCount = detailsTable.rows.length;
+    
+    var row = detailsTable.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
 
+    cell1.innerHTML = rowCount + 1;
+    cell2.innerHTML = nE;
+    cell3.innerHTML = dW;
+    cell4.innerHTML = dR;
+    cell5.innerHTML = grossPay;
+    cell6.innerHTML = dA;
+    cell7.innerHTML = netPay;
+  }
+  // -------------------------------------------------------------
 
+function deleteNumber(){
+    var toDelete;
+    var empNumber = document.getElementById("deleteInfo").value;
+    var length = document.getElementById("details").rows.length;
+    document.getElementById("details").deleteRow(empNumber - 1);
+
+    toDelete = confirm("Delete Information Number " + empNumber + "?");
+    var line = empNumber;
+
+    if (toDelete){
+      while (line <= length){
+      var i = document.getElementById("details").rows[line - 1].cells;
+      i[0].innerHTML = line;
+      line++;
+      }
+    }
+  }
 
 </script>
 
